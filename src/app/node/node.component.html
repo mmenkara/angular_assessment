@@ -1,0 +1,25 @@
+<div class="m-l-15">
+<div class="node-container">
+  <div [ngClass]="{'border-container': true, 'focus-border': inFocus}" (mouseenter)="inFocus = true" (mouseleave)="inFocus = false">
+  <img class="icon" *ngIf="node.type === 'file' || node.type === 'folder'" [src]="iconUrls[node.type]"/>
+  <ng-container *ngIf="editMode">
+    <input [(ngModel)]="formModel" class="m-r-5">
+    <button class="icon-button black-background m-r-5" (click)="saveNode()"><i class="material-icons">check</i></button>
+    <button class="icon-button white-background m-r-5" (click)="deleteNode.emit(node.id)"><i class="material-icons">clear</i></button>
+  </ng-container>
+  <ng-container *ngIf="chooseTypeMode">
+    <button (click)="chooseNodeType('file')">File</button>
+    <button (click)="chooseNodeType('folder')">Folder</button>
+  </ng-container>
+  <ng-container *ngIf="!chooseTypeMode && !editMode">
+    <span class="m-r-5">{{node.name}}</span>
+    <button class="icon-button black-background m-r-5" *ngIf="inFocus && node.type === 'folder'" (click)="addChildNode()"><i class="material-icons">add</i></button>
+    <button class="icon-button black-background m-r-5" *ngIf="inFocus" (click)="deleteNode.emit(node.id)"><i class="material-icons">delete</i></button>
+  </ng-container>
+  </div>
+  <span class="flex-fill"></span>
+</div>
+  <ng-container *ngIf="node.children as children">
+    <app-node *ngFor="let child of children" [node]="child" (updateNode)="handleChildUpdate($event)" (deleteNode)="handleChildDelete($event)"></app-node>
+  </ng-container>
+</div>

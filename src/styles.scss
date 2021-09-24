@@ -1,1 +1,79 @@
 /* You can add global styles to this file, and also import other style files */
+img.icon {
+  height: 18px;
+  width: 18px;
+  margin-right: 5px;
+}
+
+.m-r-5 {
+  margin-right: 5px;
+}
+
+#add-root-folder {
+  height: 36px;
+  color: white;
+  border: none;
+  background-color: black;
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-size: 12px;
+}
+
+.node-container {
+  margin: 5px;
+  display: flex;
+}
+
+.border-container {
+  padding: 2px 5px;
+  align-items: center;
+  display: flex;
+  border: 1px solid white;
+  border-radius: 2px;
+  height: 30px;
+}
+
+.json-textarea {
+  margin-top: 20px;
+}
+
+.flex-fill {
+  flex: 1 1 auto;
+  box-sizing: border-box;
+}
+
+.icon-button {
+  height: 24px;
+  width: 24px;
+  border: none;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  i.material-icons {
+    height: 18px;
+    width: 18px;
+    font-size: 18px;
+    line-height: 18px;
+  }
+}
+
+.black-background {
+  background-color: black;
+  color: white;
+}
+
+.white-background {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.m-l-15 {
+  margin-left: 15px;
+}
+
+.focus-border {
+  border-color: black;
+}
+
